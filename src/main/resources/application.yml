@@ -1,15 +1,9 @@
 spring:
-  datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3307/spring_study_demo?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false
-    username: root
-    password: 123456
+  profiles:
+    active: test
 
 mybatis:
   type-aliases-package: com.boot.security.server.model
   mapper-locations: classpath:/mybatis-mappers/*
   configuration:
     mapUnderscoreToCamelCase: true
-
-server:
-  port: 8080

@@ -25,8 +25,6 @@ public class FormController {
 
     @PostMapping
     public String submit(DemoForm form, Model model) {
-        System.out.println(form.getAge());
-        System.out.println(form.getName());
         Demo demo = new Demo();
         BeanUtils.copyProperties(form, demo);
         demoService.save(demo);

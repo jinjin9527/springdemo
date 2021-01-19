@@ -4,7 +4,7 @@
 <mapper namespace="com.demo.mapper.DemoMapper">
 
 	<select id="list" resultType="com.demo.pojo.Demo">
-		select * from demo
+		select id,name,age,from_data_source from demo
 	</select>
 
 	<select id="getById" resultType="com.demo.pojo.Demo">
