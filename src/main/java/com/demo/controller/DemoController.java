@@ -15,7 +15,7 @@ public class DemoController {
 
     @GetMapping({"/", "/index"})
     public String index(){
-        return "redirect:/list";
+        return "index";
     }
 
     @GetMapping("/list")

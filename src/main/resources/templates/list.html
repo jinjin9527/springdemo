@@ -5,38 +5,39 @@
     <title>Title</title>
 </head>
 <body>
-<body>
-    <div>
-        <h1>Demoデータ表示</h1>
-        <table>
-            <thead>
-                <tr>
-                    <th> Id </th>
-                    <th> Name </th>
-                    <th> Age </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr th:if="${demoList.empty}">
-                    <td colspan="2"> No data </td>
-                </tr>
-                <tr th:each="demo : ${demoList}">
-                    <td><span th:text="${demo.id}"> Id</span></td>
-                    <td><span th:text="${demo.name}"> Name </span></td>
-                    <td><span th:text="${demo.age}"> Age </span></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <hr/>
-    <div>
-        <h1>Demoデータ追加</h1>
-        <form th:action="@{/form}" method="post" th:object="${demoForm}">
-            <input type="text" th:field="*{name}" />
-            <input type="text" th:field="*{age}" />
-            <input type="submit" value="Submit" />
-        </form>
-    </div>
-</body>
+<div>
+    <h1>Demoデータ表示</h1>
+    <table>
+        <thead>
+        <tr>
+            <th> Id </th>
+            <th> Name </th>
+            <th> Age </th>
+            <th> DataSource </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:if="${demoList.empty}">
+            <td colspan="2"> No data </td>
+        </tr>
+        <tr th:each="demo : ${demoList}">
+            <td><span th:text="${demo.id}"> Id</span></td>
+            <td><span th:text="${demo.name}"> Name </span></td>
+            <td><span th:text="${demo.age}"> Age </span></td>
+            <td><span th:text="${demo.fromDataSource}"> DataSource </span></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<hr/>
+<div>
+    <h1>Demoデータ追加</h1>
+    <form th:action="@{/form}" method="post" th:object="${demoForm}">
+        <table><thead><tr><th>name</th><th>age</th></tr></thead><tbody><tr><td><input type="text" id="name" th:field="*{name}" /></td><td><input type="text" th:field="*{age}" /></td> </tr></tbody></table>
+        <br/>
+
+        <input type="submit" value="Submit" />
+    </form>
+</div>
 </body>
 </html>

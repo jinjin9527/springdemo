@@ -1,1 +1,1 @@
-create table if not exists demo(id int primary key, name varchar(1024), age int);
+create table if not exists demo(id int primary key, name varchar(255), age int, from_data_source VARCHAR(255));
