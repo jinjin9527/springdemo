@@ -1,15 +1,27 @@
 spring:
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        use_sql_comments: true
+        format_sql: true
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3307/spring_study_demo?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false
-    username: root
-    password: 123456
-
-mybatis:
-  type-aliases-package: com.boot.security.server.model
-  mapper-locations: classpath:/mybatis-mappers/*
-  configuration:
-    mapUnderscoreToCamelCase: true
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:aafile:/Users/duke/h2TempDbData
+    username: sa
+    password:
+    schema: classpath:init.sql
+  h2:
+    console:
+      enabled: true
+      path: /h2
+      settings:
+        trace: true
+        web-allow-others: false
+        web-admin-password: 123456
 
 server:
   port: 8080
